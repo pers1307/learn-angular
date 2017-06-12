@@ -10,6 +10,9 @@ export class ShoppingEditComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+    console.log('!');
+    // debugger;
   }
 
 }
