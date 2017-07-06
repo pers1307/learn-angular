@@ -6,10 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  public loadedFeature = 'recipe';
-
-  public onNavigate(feature: string) {
-    this.loadedFeature = feature;
-  }
+  numbers = [1, 2, 3, 4, 5];
+  onlyOdd = false;
+  oddNumbers = [1, 2, 5];
+  evenNumbers = [2, 4];
+  value = 10;
 }

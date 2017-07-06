@@ -4,3 +4,4 @@
 
 ### Commands
 Generate component `ng g c <name>`
+Generate directives `ng g d <name>`
