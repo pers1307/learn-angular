@@ -1,21 +1,15 @@
-<!--<div class="container">-->
-    <!--<div class="row">-->
-        <!--<div class="col-xs-12">-->
-            <!--<h3>I'm component!!!</h3>-->
-            <!--<hr>-->
-            <!--<app-servers></app-servers>-->
-            <!--&lt;!&ndash;<div app-servers></div>&ndash;&gt;-->
-            <!--&lt;!&ndash;<div class="app-servers"></div> Don't work&ndash;&gt;-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->
-
-<app-header (featureSelected)="onNavigate($event)"></app-header>
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>
-            <app-shopping-list *ngIf="loadedFeature !== 'recipe'"></app-shopping-list>
-        </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <a routerLink="/">Home</a>
+      <a [routerLink]="['user', 1]">User 1 {{ user1Activated ? '(act)' : '' }}</a>
+      <a [routerLink]="['user', 2]">User 2 {{ user2Activated ? '(act)' : '' }}</a>
     </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
