@@ -1,21 +1,17 @@
-<!--<div class="container">-->
-    <!--<div class="row">-->
-        <!--<div class="col-xs-12">-->
-            <!--<h3>I'm component!!!</h3>-->
-            <!--<hr>-->
-            <!--<app-servers></app-servers>-->
-            <!--&lt;!&ndash;<div app-servers></div>&ndash;&gt;-->
-            <!--&lt;!&ndash;<div class="app-servers"></div> Don't work&ndash;&gt;-->
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->
-
-<app-header (featureSelected)="onNavigate($event)"></app-header>
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes>
-            <app-shopping-list *ngIf="loadedFeature !== 'recipe'"></app-shopping-list>
-        </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <!-- Этот пайп позволяет дергать Observable без Subscribe -->
+      <h1>{{ appName | async }}</h1>
+      <input type="text" #serverName>
+      <button class="btn btn-primary" (click)="onAddServer(serverName.value)">Add Server</button>
+      <br><br>
+      <button class="btn btn-primary" (click)="onSave()">Save Servers</button>
+      <button class="btn btn-primary" (click)="onGet()">Get Servers</button>
+      <hr>
+      <ul class="list-group" *ngFor="let server of servers">
+        <li class="list-group-item">{{ server.name }} (ID: {{ server.id }})</li>
+      </ul>
     </div>
+  </div>
 </div>
